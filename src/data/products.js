@@ -53,6 +53,62 @@ export const products = [
     image:
       "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D",
   },
+
+  // Additional 20 products
+  {
+    id: 7,
+    title: "Gaming Mouse",
+    price: 49.27,
+    category: "Electronics",
+    description: "Precision gaming mouse with customizable DPI.",
+    image:
+      "https://images.unsplash.com/photo-1618401471926-d23b5f97197f?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 8,
+    title: "Bluetooth Speaker",
+    price: 65.89,
+    category: "Electronics",
+    description: "Portable speaker with deep bass and long battery life.",
+    image:
+      "https://images.unsplash.com/photo-1583225052723-8b6f6f8a0ad4?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 9,
+    title: "Electric Kettle",
+    price: 34.75,
+    category: "Home",
+    description: "Fast-boiling electric kettle with auto shut-off.",
+    image:
+      "https://images.unsplash.com/photo-1616627785488-e3c92a8df98e?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 10,
+    title: "Sunglasses",
+    price: 22.45,
+    category: "Accessories",
+    description: "UV-protected stylish sunglasses for all seasons.",
+    image:
+      "https://images.unsplash.com/photo-1598032892730-d6fb57a707f5?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 11,
+    title: "Wireless Keyboard",
+    price: 53.6,
+    category: "Electronics",
+    description: "Slim wireless keyboard with rechargeable battery.",
+    image:
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 12,
+    title: "Fitness Tracker",
+    price: 89.1,
+    category: "Electronics",
+    description: "Track your steps, sleep and heart rate efficiently.",
+    image:
+      "https://images.unsplash.com/photo-1616627455425-7fc7fbb4f409?w=500&auto=format&fit=crop&q=60",
+  },
 ];
 
 export const categories = ["Electronics", "Sports", "Accessories", "Home"];
