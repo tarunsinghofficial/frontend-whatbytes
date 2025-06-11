@@ -1,14 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { products } from "@/data/products";
 import { reviews } from "@/data/reviews";
 import Header from "@/components/Header";
+import useCartStore from "@/store/cartStore";
 
 export default function ProductDetail({ params }) {
   const [quantity, setQuantity] = useState(1);
+  const addItem = useCartStore((state) => state.addItem);
+  const updateQuantity = useCartStore((state) => state.updateQuantity);
+  const items = useCartStore((state) => state.items);
+
   const product = products.find((p) => p.id === parseInt(params.id));
+  const cartItem = product
+    ? items.find((item) => item.id === product.id)
+    : null;
+
+  useEffect(() => {
+    if (cartItem) {
+      setQuantity(cartItem.quantity);
+    }
+  }, [cartItem]);
 
   if (!product) {
     return (
@@ -22,6 +36,21 @@ export default function ProductDetail({ params }) {
       </div>
     );
   }
+
+  const handleAddToCart = () => {
+    if (cartItem) {
+      updateQuantity(product.id, quantity);
+    } else {
+      addItem(product, quantity);
+    }
+  };
+
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
+    if (cartItem) {
+      updateQuantity(product.id, newQuantity);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -68,14 +97,16 @@ export default function ProductDetail({ params }) {
                 </h2>
                 <div className="flex items-center space-x-4">
                   <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    onClick={() =>
+                      handleQuantityChange(Math.max(1, quantity - 1))
+                    }
                     className="px-3 py-1 border rounded-md hover:bg-gray-100"
                   >
                     -
                   </button>
                   <span className="text-lg font-medium">{quantity}</span>
                   <button
-                    onClick={() => setQuantity(quantity + 1)}
+                    onClick={() => handleQuantityChange(quantity + 1)}
                     className="px-3 py-1 border rounded-md hover:bg-gray-100"
                   >
                     +
@@ -83,8 +114,11 @@ export default function ProductDetail({ params }) {
                 </div>
               </div>
 
-              <button className="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-300">
-                Add to Cart
+              <button
+                onClick={handleAddToCart}
+                className="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-300"
+              >
+                {cartItem ? "Update Cart" : "Add to Cart"}
               </button>
             </div>
           </div>
