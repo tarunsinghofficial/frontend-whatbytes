@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
 import FilterSidebar from "@/components/FilterSidebar";
+import Footer from "@/components/Footer";
 import { products } from "@/data/products";
 import useFilterStore from "@/store/filterStore";
 
@@ -58,17 +59,17 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
       <Header />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-8">
           <div className="w-64 flex-shrink-0">
             <FilterSidebar />
           </div>
 
           <div className="flex-1">
-            <h1 className="text-3xl font-bold text-gray-900 mb-8">
-              Our Products
+            <h1 className="text-3xl font-bold text-[#002B5A] mb-8">
+              Product Listing
             </h1>
 
             {filteredProducts.length === 0 ? (
@@ -89,15 +90,8 @@ export default function Home() {
             )}
           </div>
         </div>
-      </div>
-
-      <footer className="bg-white border-t mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-gray-500">
-            <p>&copy; 2025 WhatBytes</p>
-          </div>
-        </div>
-      </footer>
+      </main>
+      <Footer />
     </div>
   );
 }

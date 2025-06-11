@@ -109,6 +109,17 @@ export const products = [
     image:
       "https://images.unsplash.com/photo-1616627455425-7fc7fbb4f409?w=500&auto=format&fit=crop&q=60",
   },
+  {
+    id: 13,
+    title: "Smartphone",
+    price: 699.99,
+    category: "Electronics",
+    description:
+      "Lorem ipsum dolor amet, consectetur euisagend. Latest smartphone with a stunning display and powerful camera.",
+    image:
+      "https://images.unsplash.com/photo-1598327105666-5b8988a385a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D",
+    reviews: [{ rating: 4.5, comment: "Great phone!" }],
+  },
 ];
 
 export const categories = ["Electronics", "Sports", "Accessories", "Home"];

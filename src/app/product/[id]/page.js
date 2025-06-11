@@ -72,7 +72,7 @@ export default function ProductDetail({ params }) {
                 <h1 className="text-3xl font-bold text-gray-900">
                   {product.title}
                 </h1>
-                <p className="text-2xl font-semibold text-blue-600 mt-2">
+                <p className="text-2xl font-semibold text-[#0758A8] mt-2">
                   ${product.price}
                 </p>
               </div>
@@ -116,7 +116,7 @@ export default function ProductDetail({ params }) {
 
               <button
                 onClick={handleAddToCart}
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                className="w-full bg-[#0758A8] text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-300"
               >
                 {cartItem ? "Update Cart" : "Add to Cart"}
               </button>
